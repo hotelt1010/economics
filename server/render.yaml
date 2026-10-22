@@ -15,3 +15,7 @@ services:
         generateValue: true
       - key: ALLOWED_ORIGIN
         value: https://hotelt1010.github.io
+      - key: AUTH_EMAIL
+        sync: false
+      - key: AUTH_PASSWORD
+        sync: false

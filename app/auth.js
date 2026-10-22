@@ -94,14 +94,13 @@ function showGate({ dismissable }) {
   overlay.innerHTML = `
     <div class="auth-card">
       <h2>Sign in to sync your progress</h2>
-      <p class="auth-sub">Keep your streak and mastery on every device. Optional — you can skip and keep progress on this device only.</p>
+      <p class="auth-sub">Keep your streak and mastery on every device.</p>
       <form id="auth-form">
         <input id="auth-email" type="email" placeholder="Email" autocomplete="email" required />
-        <input id="auth-password" type="password" placeholder="Password (min 8 characters)" autocomplete="current-password" minlength="8" required />
+        <input id="auth-password" type="password" placeholder="Password" autocomplete="current-password" required />
         <div class="auth-error" id="auth-error"></div>
         <div class="auth-actions">
           <button type="submit" id="auth-login-btn">Log in</button>
-          <button type="button" id="auth-signup-btn">Sign up</button>
         </div>
       </form>
       ${dismissable ? '<button type="button" id="auth-skip" class="auth-skip">Continue without an account</button>' : '<button type="button" id="auth-skip" class="auth-skip">Skip for now</button>'}
@@ -135,7 +134,6 @@ function showGate({ dismissable }) {
     e.preventDefault();
     submit("/api/login");
   });
-  overlay.querySelector("#auth-signup-btn").addEventListener("click", () => submit("/api/signup"));
   overlay.querySelector("#auth-skip").addEventListener("click", () => {
     overlay.remove();
     if (dismissable) return;

@@ -5,18 +5,12 @@ const db = createClient({
   authToken: process.env.TURSO_AUTH_TOKEN,
 });
 
-await db.batch([
-  `CREATE TABLE IF NOT EXISTS users (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    email TEXT UNIQUE NOT NULL,
-    password_hash TEXT NOT NULL,
-    created_at TEXT DEFAULT CURRENT_TIMESTAMP
-  )`,
+await db.execute(
   `CREATE TABLE IF NOT EXISTS progress (
-    user_id INTEGER PRIMARY KEY REFERENCES users(id),
+    owner TEXT PRIMARY KEY,
     state TEXT NOT NULL,
     updated_at TEXT DEFAULT CURRENT_TIMESTAMP
-  )`,
-], "write");
+  )`
+);
 
 export default db;
