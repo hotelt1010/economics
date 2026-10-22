@@ -523,5 +523,4 @@ function endSession() {
 
 /* ---------- Init ---------- */
 
-loadState();
-render();
+// Boot is triggered by auth.js (after it resolves any sign-in/sync), via window.startApp().

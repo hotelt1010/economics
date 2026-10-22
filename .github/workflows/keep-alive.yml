@@ -1,0 +1,12 @@
+name: Keep Render API alive
+
+on:
+  schedule:
+    - cron: "*/10 * * * *"
+  workflow_dispatch: {}
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - run: curl -fsS "${{ vars.API_HEALTH_URL }}" || true

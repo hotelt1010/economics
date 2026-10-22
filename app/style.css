@@ -359,3 +359,113 @@ button.secondary {
   font-size: 0.9rem;
   line-height: 1.5;
 }
+
+.auth-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 24, 36, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 1000;
+}
+
+.auth-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 28px 24px;
+  max-width: 360px;
+  width: 100%;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.auth-card h2 {
+  margin: 0 0 6px;
+  font-size: 1.15rem;
+}
+
+.auth-sub {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin: 0 0 16px;
+  line-height: 1.4;
+}
+
+.auth-card input {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
+.auth-error {
+  color: var(--red);
+  font-size: 0.85rem;
+  min-height: 1.2em;
+  margin-bottom: 4px;
+}
+
+.auth-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.auth-actions button {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--blue);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.auth-actions button#auth-signup-btn {
+  background: var(--card-bg);
+  color: var(--blue);
+}
+
+.auth-skip {
+  display: block;
+  width: 100%;
+  margin-top: 14px;
+  background: none;
+  border: none;
+  color: var(--muted);
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.account-badge {
+  position: fixed;
+  bottom: 12px;
+  right: 12px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 8px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.8rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  z-index: 900;
+}
+
+.account-badge-status {
+  color: var(--muted);
+}
+
+.account-badge button {
+  border: none;
+  background: none;
+  color: var(--blue);
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
