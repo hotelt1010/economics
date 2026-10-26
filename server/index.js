@@ -39,6 +39,7 @@ function auth(req, res, next) {
   }
 }
 
+app.get("/", (_req, res) => res.type("text").send("Economics progress API is running. See /api/health."));
 app.get("/api/health", (_req, res) => res.json({ ok: true }));
 
 app.post("/api/login", (req, res) => {
